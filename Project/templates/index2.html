@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <li><a href="{{ url_for('login') }}" class="bts">LogIn</a></li>
+    <li><a href="{{ url_for('sign_up') }}" class="bts">SignUp</a></li>
+    <li><a href="{{ url_for('dashboard_page') }}" class="bts">Admin</a></li>
+    <!-- <li><a href="{{ url_for('orders_page') }}" class="bts">Orders</a></li>
+    <li><a href="{{ url_for('dog_data_page') }}" class="bts">Dogs Page</a></li>
+    <li><a href="{{ url_for('cat_data_page') }}" class="bts">Cats Page</a></li>
+    <li><a href="{{ url_for('all_user_details') }}" class="bts">Cats Page</a></li> -->
+    <h1>{{output}}</h1>
+</body>
+</html>

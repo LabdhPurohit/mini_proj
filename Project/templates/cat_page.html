@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dog_page_style.css') }}">
+    <title>Pet Cards</title>
+</head>
+<body>
+    <div class="container">
+        {% for item in my_list %}
+        <div class="card">
+            <img src="https://picsum.photos/id/40/200/200" alt="Dog 1">
+            <div class="card-details">
+                <h2>Name: {{item[2]}}</h2>
+                <p>Age: {{item[3]}}</p>
+                <p>Breed: {{item[4]}}</p>
+                <p>Gender: {{item[5]}}</p>
+                <p>Specific Requirements: {{item[6]}}</p>
+                <p>Price: {{item[7]}}</p> -->
+                <!-- Add more details as needed -->
+                <!-- <div class="book-button">
+                    <button>Book</button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dog_page_style.css') }}">
+    <title>Pet Cards</title>
+</head>
+<body>
+    {% if element_1 %}
+    <div class="container">
+        {% for item in my_list %}
+        <div class="card">
+        <form action="/c_submit_details" method="post">
+            <!-- <img src="https://picsum.photos/id/237/200/200" alt="Cat {{item[0]}}"> -->
+            <img src="{{ url_for('static', filename='images/cats/cat_' ~ item[0] ~ '.jpg') }}" alt="Cat {{ item[0] }}">
+            <div class="card-details">
+                <h2>Name: {{item[2]}}</h2>
+                <p>Age: {{item[3]}}</p>
+                <p>Breed: {{item[4]}}</p>
+                <p>Gender: {{item[5]}}</p>
+                <p>Specific Requirements: {{item[6]}}</p>
+                <p>Price: {{item[7]}}</p>
+                <!-- Add more details as needed -->
+                <div class="book-button">
+                    <button type="c_submit_details" name="submit_action" value="{{item[0]}}">Book</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% if element_2 %}
+    <div>
+        <form action="/c_info_submit" method="post">
+            <label for="c_name">Name:</label>
+            <input type="text" value="{{name}}" readonly>
+
+            <label for="phone">Phone Number:</label>
+            <input type="number" name="phone" required>
+
+            <label for="addr">Address:</label>
+            <input type="text" name="addr" required>
+
+            <button class="button" type="submit">Submit</button>
+            <h2>Name: {{d_name}}</h2>
+            <p>Age: {{d_age}}</p>
+            <p>Breed: {{d_breed}}</p>
+            <p>Gender: {{d_gender}}</p>
+            <p>Specific Requirements: {{d_src}}</p>
+            <p>Price: {{d_price}}</p>
+            <label>{{output}}</label>
+        </form>
+    </div>
+    {% endif %}
+</body>
+</html>
+

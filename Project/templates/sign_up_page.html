@@ -1,0 +1,77 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <h1>SIGN UP</h1>
+        </div>
+    <form method="POST" action="{{ url_for('create_acc') }}">
+        <label for="u_name">Name:</label>
+        <input type="text" name="u_name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="pass">Create Password:</label>
+        <input type="password" name="pass" required>
+
+        <button type="submit" class="button">Sign Up</button>
+        <label style="padding-top: 20px;">{{output}}</label>
+    </form>
+    <div class="signin-link">
+        <label>Already have an account?</label>
+        <a href="{{ url_for('login') }}">Sign In</a>
+    </div>
+
+</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+  <title>SignUp Page</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                    <h2>SignUp</h2>
+                <form method="POST" action="{{ url_for('create_acc') }}">
+                    <div class="inputbox">
+                        <ion-icon name="people-outline"></ion-icon>
+                        <input type="text" name="u_name" required>
+                        <label for="u_name">Name</label>
+                    </div>
+
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="pass" required>
+                        <label for="pass">Password</label>
+                    </div>
+                    <button type="submit" class="button">Sign Up</button>
+                    <div class="register">
+                        <p>Already have a account? <a href="{{ url_for('sign_up') }}">LogIn</a></p>
+                    </div>
+                    <label style="padding-top: 20px; color: white; align-items: center;">{{output}}</label>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

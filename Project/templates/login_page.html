@@ -1,0 +1,64 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="logo"><h1>Sign In</h1></div>
+    <form method="POST" action="login_email_verification">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+
+        <label for="pass">Password:</label>
+        <input type="password" name="pass" required>
+
+        <button class="button" type="submit">Sign In</button>
+        <label>{{output}}</label>
+        <div class="signin-link">
+            <label>Create a New Account</label>
+            <a href="{{ url_for('sign_up') }}">Sign In</a>
+          </div>
+    </form>
+    <h1>{{name}}</h1>
+</div>
+</body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+  <title>Login Page</title>
+</head>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                    <h2>Login</h2>
+                <form method="POST" action="login_email_verification">
+                    <div class="inputbox">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <input type="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" name="pass" required>
+                        <label for="pass">Password</label>
+                    </div>
+                    <button type="submit">Log in</button>
+                    <div class="register">
+                        <p>Don't have a account <a href="{{ url_for('sign_up') }}">Register</a></p>
+                    </div>
+                    <label style="padding-top: 20px; color: white; align-items: center;">{{output}}</label>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
